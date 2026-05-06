@@ -15,7 +15,7 @@ import TextAbout from '@/components/sections/about/TextAbout';
 
 export default function LandingPage() {
   const handlePurchase = (price: string) => {
-    alert(`Proceeding to checkout for ${price}. Redirecting to secure payment page...`);
+    alert(`Proceeding to checkout for ${price}.\n\nPlease complete your payment to one of the following addresses:\n\nUSDT (TRC20): TRiFMfBoHSvX84LSux5wJCHSYXMRizkGer\nBitcoin: 1BD71itt7ezjKjZm2WckiMSETTen8tpFRD\nSolana: 3j9s9hE9zxBTswF7Cmok1PPUjxBxy3UXaZtrPFtf9bBr\n\nAfter payment, please contact support with your transaction hash to receive your API key.`);
   };
 
   return (
@@ -143,7 +143,7 @@ export default function LandingPage() {
       textboxLayout="default"
       useInvertedBackground={false}
       faqs={[
-        { id: "f1", title: "How can I pay?", content: "We support USDT (TRC20), BTC, and SOL payments." },
+        { id: "f1", title: "How can I pay?", content: "We accept payments via USDT (TRC20) at TRiFMfBoHSvX84LSux5wJCHSYXMRizkGer, Bitcoin at 1BD71itt7ezjKjZm2WckiMSETTen8tpFRD, and Solana at 3j9s9hE9zxBTswF7Cmok1PPUjxBxy3UXaZtrPFtf9bBr." },
         { id: "f2", title: "How do I get my API key?", content: "Keys are generated instantly in your user dashboard after payment confirmation." },
         { id: "f3", title: "Is there a support team?", content: "Yes, our support is available through email at wishingcoming6460@gmail.com and our in-dashboard chat." },
       ]}
