@@ -2,10 +2,12 @@
 
 import { useState } from "react";
 import { ThemeProvider } from "@/providers/themeProvider/ThemeProvider";
-import { Copy, Check, Send } from "lucide-react";
+import { Copy, Check, Send, Ticket } from "lucide-react";
 
 export default function PaymentDashboard() {
   const [copied, setCopied] = useState<string | null>(null);
+  const [ticketSubject, setTicketSubject] = useState("");
+  const [ticketMessage, setTicketMessage] = useState("");
 
   const wallets = [
     { name: "USDT (TRC20)", address: "TRiFMfBoHSvX84LSux5wJCHSYXMRizkGer" },
@@ -53,7 +55,8 @@ export default function PaymentDashboard() {
             ))}
           </div>
 
-          <div className="p-8 rounded-xl border border-white/10 bg-white/5 mt-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="p-8 rounded-xl border border-white/10 bg-white/5">
             <h2 className="text-2xl font-bold mb-6">Submit Payment Details</h2>
             <form className="flex flex-col gap-4" onSubmit={(e) => { e.preventDefault(); alert("Submission received!"); }}>
                 <input placeholder="Your Email" className="p-3 rounded border bg-transparent" required />
@@ -63,6 +66,21 @@ export default function PaymentDashboard() {
                     <Send size={18} /> Submit Payment Details
                 </button>
             </form>
+          </div>
+
+          <div className="p-8 rounded-xl border border-white/10 bg-white/5">
+            <h2 className="text-2xl font-bold mb-6 flex items-center gap-2"><Ticket /> Support Ticket</h2>
+            <form className="flex flex-col gap-4" onSubmit={(e) => { 
+                e.preventDefault(); 
+                window.location.href = `mailto:wishingcoming6460@gmail.com?subject=${encodeURIComponent(ticketSubject)}&body=${encodeURIComponent(ticketMessage)}`; 
+            }}>
+                <input value={ticketSubject} onChange={(e) => setTicketSubject(e.target.value)} placeholder="Subject" className="p-3 rounded border bg-transparent" required />
+                <textarea value={ticketMessage} onChange={(e) => setTicketMessage(e.target.value)} placeholder="Describe your issue" className="p-3 rounded border bg-transparent min-h-[100px]" required />
+                <button type="submit" className="w-full py-3 bg-primary text-white rounded font-bold flex items-center justify-center gap-2">
+                    <Send size={18} /> Send Ticket
+                </button>
+            </form>
+          </div>
           </div>
         </div>
       </main>
