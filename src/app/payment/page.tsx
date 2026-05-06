@@ -20,7 +20,18 @@ export default function PaymentDashboard() {
   };
 
   return (
-    <ThemeProvider>
+    <ThemeProvider
+      defaultButtonVariant="text-stagger"
+      defaultTextAnimation="entrance-slide"
+      borderRadius="rounded"
+      contentWidth="medium"
+      sizing="medium"
+      background="circleGradient"
+      cardStyle="glass-elevated"
+      primaryButtonStyle="gradient"
+      secondaryButtonStyle="glass"
+      headingFontWeight="normal"
+    >
       <main className="min-h-screen p-8 flex flex-col items-center gap-12">
         <div className="max-w-4xl w-full flex flex-col gap-6">
           <h1 className="text-4xl font-bold">Payment Dashboard</h1>
