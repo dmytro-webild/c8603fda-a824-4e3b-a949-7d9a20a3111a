@@ -97,12 +97,13 @@ export default function LandingPage() {
       textboxLayout="default"
       useInvertedBackground={false}
       plans={[
-        { id: "standard", badge: "Essential", price: "$50", subtitle: "Basic analytics access", buttons: [{ text: "Buy Now", onClick: () => handlePurchase("$50") }], features: ["Limited API calls", "Basic Support", "Web Access"] },
-        { id: "pro", badge: "Pro", price: "$200", subtitle: "Full platform access", buttons: [{ text: "Buy Now", onClick: () => handlePurchase("$200") }], features: ["Unlimited API calls", "Priority Support", "Dashboard Access"] },
-        { id: "lifetime", badge: "Lifetime", price: "$1,000", subtitle: "Ultimate ownership", buttons: [{ text: "Buy Now", onClick: () => handlePurchase("$1,000") }], features: ["Full Source Code", "Lifetime Support", "No usage limits"] },
+        { id: "tier1", badge: "Essential", price: "$50", subtitle: "Social API Entry", buttons: [{ text: "Buy Now", onClick: () => handlePurchase("$50") }], features: ["Weibo", "VK", "LINE", "KakaoTalk", "ShareChat"] },
+        { id: "tier2", badge: "Professional", price: "$150", subtitle: "Community Tools", buttons: [{ text: "Buy Now", onClick: () => handlePurchase("$150") }], features: ["Reddit", "Quora", "Discord", "Threads", "Google+"] },
+        { id: "tier3", badge: "Advanced", price: "$250", subtitle: "Messaging & Media", buttons: [{ text: "Buy Now", onClick: () => handlePurchase("$250") }], features: ["WhatsApp", "Facebook Messenger", "Telegram", "WeChat", "Signal", "Pinterest"] },
+        { id: "tier4", badge: "Enterprise", price: "$350", subtitle: "Total Coverage", buttons: [{ text: "Buy Now", onClick: () => handlePurchase("$350") }], features: ["Facebook", "Instagram", "X", "LinkedIn", "Snapchat", "Onlyfans"] },
       ]}
-      title="Pricing Options"
-      description="Simple, flexible plans to get you started."
+      title="API Pricing Tiers"
+      description="Select the tier that best fits your platform requirements."
     />
   </div>
 
